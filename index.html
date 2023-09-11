@@ -1,0 +1,53 @@
+ 
+ 
+ 
+ 
+<html>
+<head>
+  <title>
+    Live Streaming Player
+    </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/clap.css">
+  <script src="//cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js" type="text/javascript"></script>
+  <script src="//cdn.jsdelivr.net/npm/level-selector@0.2.0/dist/level-selector.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@clappr/hlsjs-playback@1.0.1/dist/hlsjs-playback.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@clappr/plugin-fullscreen@latest/dist/clappr-plugin-fullscreen.min.js"></script>
+</head>
+<div id="player-wrapper"></div>
+<script>
+var playerElement = document.getElementById("player-wrapper");
+var player = new Clappr.Player({
+source: 'https://live.tsports.com/live/tsports_live_1080/index.m3u8',
+mimeType: 'application/vnd.apple.mpegurl',
+mute: true,
+plugins: [HlsjsPlayback, LevelSelector],
+autoPlay: true,
+height: '100%',
+width: '100%',
+poster: 'poster.jpg'
+});
+player.attachTo(playerElement);
+player.play();
+play();
+</script>
+
+
+</body>
+</html>
+<style>
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.player-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* Add any additional styling properties for your video player */
+}
+
+</style>
